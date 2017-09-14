@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="description" content="The Ultimate Cat Quiz">
+  <meta name="keywords" content="HTML, CSS, Bootstrap, JavaScript">
+  <meta name="author" content="Lauren Piasecki">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ultimate Cat Quiz</title>
+<!-- OG Tags -->
+  <meta property="og:title" content="The Ultimate Cat Quiz">
+  <meta property="og:site_name" content="The Ultimate Cat Quiz">
+  <meta property="og:url" content="http://quiz.bearbearcat.com/">
+  <meta property="og:description" content="The Ultimate Cat Quiz">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+ <!-- Twitter Card -->	
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@laurenpiaseckii" />
+  <meta name="twitter:title" content="The Ultimate Cat Quiz" />
+  <meta name="twitter:description" content="Find out what kind of cat you are." />
+  <meta name="twitter:image" content="http://quiz.bearbearcat.com/img/himalayan2.jpg" />
+<!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="./img/cat.ico" />
+<!-- Style -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./style/style.css">
+<!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+	function results() {
+//Setting variables
+var himalayan = 0;
+var siamese = 0;
+var coon = 0;
+var bengal = 0;
+var f = document.f;
+var i = 0;
+
+//Getting Quiz Results
+for (i = 0; i < f.a.length; i++) if (f.a[i].checked) value = f.a[i].value;
+if (value == "1") { himalayan++; }
+if (value == "2") { siamese++; }
+if (value == "3") { coon++; }
+if (value == "4") { bengal++; }
+
+for (i = 0; i < f.b.length; i++) if (f.b[i].checked) value = f.b[i].value;
+if (value == "1") { himalayan++; }
+if (value == "2") { siamese++; }
+if (value == "3") { coon++; }
+if (value == "4") { bengal++; }
+
+for (i = 0; i < f.c.length; i++) if (f.c[i].checked) value = f.c[i].value;
+if (value == "1") { himalayan++; }
+if (value == "2") { siamese++; }
+if (value == "3") { coon++; }
+if (value == "4") { bengal++; }
+
+//Redirecting to results pages
+var out = "himalayan";
+i = himalayan;
+if (siamese > i) { out ="siamese"; i = siamese; }
+if (coon > i) { out ="coon"; i = coon; }
+if (bengal > i) { out ="bengal"; i = bengal; }
+location.href = out + ".html";
+}
+</script>
+</head>
+
+<body>
+  <div class="container">
+ <div class="box">
+<!-- Headings -->	
+  <h1>What kind of cat are you? <img src="./img/cat2.png"></h1>
+  <h2>Take the quiz below to find out!</h2>
+<!-- Share on Social Media -->
+<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//quiz.bearbearcat.com/"><img width ="41" src="./img/fb.png"></a>
+	<a href="https://twitter.com/home?status=%3Ca%20href=%22https%3A//www.facebook.com/sharer/sharer.php?u=http%253A//quiz.bearbearcat.com/%22%3EShare%20on%20Facebook%3C/a%3E"><img width ="46" src="./img/tw.png"></a>
+  <br>
+ <!-- Quiz -->	
+   <div class="quiz">
+  <form name="f">
+  	<p><b>Do you like water?</b></p>
+  <input type="radio" name="a" value="2">  Yucky!<br>
+  <input type="radio" name="a" value="4">  I can't stay away from it.<br>
+  <input type="radio" name="a" value="1">  Meh.<br>
+  <input type="radio" name="a" value="3">  I like everything.<br>
+  <br />
+	<p><b>What is your favourite game?</b></p>
+  <input type="radio" name="b" value="4">  Hide and seek.<br>
+  <input type="radio" name="b" value="1">  Naptime.<br>
+  <input type="radio" name="b" value="3">  Anything that involves chasing.<br>
+  <input type="radio" name="b" value="2">  I love games!<br>
+  <br />
+	<p><b>Do you like to go out into the world?</b></p>
+  <input type="radio" name="c" value="4">  I hate being inside, so yes. <br>
+  <input type="radio" name="c" value="1">  I'm afraid of the wind.<br>
+  <input type="radio" name="c" value="2">  Not by myself.<br>
+  <input type="radio" name="c" value="3">  Let's go!<br>
+  <br />
+</form> 
+</div>
+ <p><input type="button" class="btn btn-primary btn-lg" onclick="results();" value="Submit"></p>
+</div>
+</div>
+</div>
+</body>
+</html>
